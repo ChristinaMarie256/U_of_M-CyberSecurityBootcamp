@@ -82,14 +82,18 @@ We have installed the following Beats on these machines:
 - filebeat-7.4.0-amd64.deb
 - metricbeat-7.4.0-amd64.deb
 
-- [Filebeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-playbook.yml)
-- [Metricbeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-playbook.yml) 
+
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat is used to detect file system changes using Apache logs.
 - Metricbeat is used to detect system metrics changes, SSH login attempts, and CPU/RAM statistics. 
 
-### Using the Playbook
+### Using the Playbooks
+
+- [Filebeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-playbook.yml)
+- [Metricbeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-playbook.yml) 
+
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
