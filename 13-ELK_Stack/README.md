@@ -15,7 +15,6 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-<u>hello world</u>
 
 
 ### Description of the Topology
