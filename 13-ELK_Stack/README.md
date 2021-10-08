@@ -106,12 +106,12 @@ SSH into the control node and follow the steps below:
 - Update the /etc/ansible/hosts file to include the ELK Virtual Machine: 10.1.0.4
 - Run the playbooks with the commands below, then navigate to Kibana at 10.0.0.8:5601 to check that the installation worked as expected.
 
-cd/ etc/ansible
+`cd/ etc/ansible`
 
-ansible-playbook elk-install_playbook.yml elk
+`ansible-playbook elk-install_playbook.yml elk`
 
-ansible-playbook filebeat-playbook.yml webservers
+`ansible-playbook filebeat-playbook.yml webservers`
 
-ansible-playbook metericbeat-playbook.yml webservers 
+`ansible-playbook metericbeat-playbook.yml webservers` 
 
-curl http://10.0.0.8:5601
+`curl http://10.0.0.8:5601`
