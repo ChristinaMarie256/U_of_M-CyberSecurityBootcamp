@@ -52,7 +52,7 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | No                  | 47.232.50.214        |
-| VMs      | No                  | 10.0.0.4             |
+| Web VMs  | No                  | 10.0.0.4             |
 | Elk Stack| No                  | 10.0.0.4             |
 
 ### Elk Configuration
@@ -80,9 +80,14 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - filebeat-7.4.0-amd64.deb
+- metricbeat-7.4.0-amd64.deb
+
+- [Filebeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-playbook.yml)
+- [Metricbeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-playbook.yml) 
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat is used to detect file system changes using Apache logs.
+- Metricbeat is used to detect system metrics changes, SSH login attempts, and CPU/RAM statistics. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
