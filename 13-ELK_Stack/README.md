@@ -90,11 +90,13 @@ These Beats allow us to collect the following information from each machine:
 
 ### Using the Playbooks
 
+- [Filbeat Configuration YAML](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-configuration.yml)
 - [Filebeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-playbook.yml)
+- [Metricbeat Configuration YAML](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-configuration.yml)
 - [Metricbeat playbook](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-playbook.yml) 
 
 
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+In order to use the playbooks, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
