@@ -3,12 +3,14 @@
 The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/IMAGES/Net_Diagram.jpg)
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook YAML files may be used to install only certain pieces of it, such as Filebeat.
 
   [elk-install_playbook.yml](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/elk-install_playbook.yml)
+  [filebeat-playbook.yml](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/filebeat-playbook.yml)
+  [metricbeat-playbook.yml](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/13-ELK_Stack/Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -30,9 +32,9 @@ The configuration details of each machine may be found below.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| Web-1    | VM       | 10.0.0.5   | Linux            |
-| Web-2    | VM       | 10.0.0.6   | Linux            |
-| Web-3    | VM       | 10.0.0.7   | Linux            |
+| Web-1    | DVWA VM  | 10.0.0.5   | Linux            |
+| Web-2    | DVWA VM  | 10.0.0.6   | Linux            |
+| Web-3    | DVWA VM  | 10.0.0.7   | Linux            |
 | ELK VM   | ELK Stack| 10.1.0.4   | Linux            |
 
 ### Access Policies
@@ -52,14 +54,14 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | No                  | 47.232.50.214        |
-| Web VMs  | No                  | 10.0.0.4             |
-| Elk Stack| No                  | 10.0.0.4             |
+| DVWA VMs | No                  | 10.0.0.4             |
+| Elk VM   | No                  | 10.0.0.4             |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same configuration can be used on multiple machines.
 
-The playbook implements the following tasks:
+The ELK playbook implements the following tasks:
 
 - Install Docker.io
 - Install Python3-pip
@@ -74,9 +76,9 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-- 10.0.0.5
-- 10.0.0.7
-- 10.0.0.8
+- 10.0.0.5 (DVWA Web-1)
+- 10.0.0.7 (DVWA Web-2)
+- 10.0.0.8 (DVWA Web-3)
 
 We have installed the following Beats on these machines:
 - filebeat-7.4.0-amd64.deb
@@ -102,9 +104,14 @@ SSH into the control node and follow the steps below:
 - Copy the playbooks to the Ansible Control Node.
 - Update the /etc/ansible/hosts file to include the Web Virtual Machines: 10.0.0.5; 10.0.0.6; 10.0.0.7
 - Update the /etc/ansible/hosts file to include the ELK Virtual Machine: 10.1.0.4
-- Run the playbooks with the commands below, then navigate to Kibana to check that the installation worked as expected.
+- Run the playbooks with the commands below, then navigate to Kibana at 10.0.0.8:5601 to check that the installation worked as expected.
 
 cd/ etc/ansible
+
 ansible-playbook elk-install_playbook.yml elk
+
 ansible-playbook filebeat-playbook.yml webservers
+
 ansible-playbook metericbeat-playbook.yml webservers 
+
+curl http://10.0.0.8:5601
