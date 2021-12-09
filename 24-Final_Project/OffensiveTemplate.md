@@ -11,6 +11,7 @@ Nmap scan results for each machine reveal the below services and OS details:
 
 ```bash
 $ nmap ... nmap -sT -sV -A -Pn 192.168.1.110
+ 
   ![Image](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/24-Final_Project/Images/nmap.PNG)
 ```
 
