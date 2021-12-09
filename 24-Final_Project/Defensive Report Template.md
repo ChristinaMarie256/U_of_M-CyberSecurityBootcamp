@@ -8,7 +8,7 @@
 - Suggestions for Going Further
 
 ### Network Topology
-![IMAGE](C:\Users\chris\U_of_M-CyberSecurityBootcamp\24-Final_Project\Images\Topology.PNG)
+![IMAGE](https://github.com/ChristinaMarie256/U_of_M-CyberSecurityBootcamp/blob/main/24-Final_Project/Images/Topology.PNG)
 
 ### The following machines were identified on the network:
 
