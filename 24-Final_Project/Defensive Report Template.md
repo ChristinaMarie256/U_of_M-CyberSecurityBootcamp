@@ -8,7 +8,7 @@
 - Suggestions for Going Further
 
 ### Network Topology
-Insert diagram
+(C:\Users\chris\U_of_M-CyberSecurityBootcamp\24-Final_Project\Images\Topology.PNG)
 
 ### The following machines were identified on the network:
 
